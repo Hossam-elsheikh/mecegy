@@ -1,0 +1,365 @@
+{
+  "meta": {
+    "title": "Middle East Consultants | Engineering Excellence Since 2002",
+    "description": "MEC is a leading construction consultancy firm in Egypt with 24+ years of experience in architecture, project management, and construction supervision."
+  },
+  "nav": {
+    "home": "Home",
+    "services": "Services",
+    "projects": "Projects",
+    "news": "News",
+    "contact": "Contact",
+    "joinUs": "Join Us",
+    "ourTeam": "Our Team"
+  },
+  "hero": {
+    "slides": [
+      {
+        "title": "Accuracy to Build",
+        "subtitle": "Middle East Consultants"
+      },
+      {
+        "title": "24 Years of Experience",
+        "subtitle": "Expertise that spans over two decades"
+      },
+      {
+        "title": "Our Team Has You Covered",
+        "subtitle": "Professional engineering solutions for every challenge"
+      },
+      {
+        "title": "We Create Better Ideas",
+        "subtitle": "Innovation in every project we deliver"
+      },
+      {
+        "title": "For Your Luxury Life",
+        "subtitle": "Premium construction & design excellence"
+      }
+    ]
+  },
+  "stats": {
+    "years": "Years of Experience",
+    "yearsCount": "24",
+    "projects": "Completed Projects",
+    "projectsCount": "150",
+    "clients": "Happy Clients",
+    "clientsCount": "80",
+    "engineers": "Expert Engineers",
+    "engineersCount": "200"
+  },
+  "services": {
+    "title": "Our Services",
+    "subtitle": "Comprehensive engineering consultancy solutions tailored to your needs",
+    "learnMore": "Learn More",
+    "architecture": {
+      "title": "Architecture & Design",
+      "description": "From schematic design to construction documents, we bring your vision to life with innovative and sustainable design solutions.",
+      "items": ["Schematic Design", "Design Development", "Construction Documents", "Interior Design & Landscape"]
+    },
+    "projectManagement": {
+      "title": "Project Management",
+      "description": "Expert planning, scheduling, and cost management ensuring successful and timely project delivery.",
+      "items": ["Planning & Scheduling", "Cost Management", "Procurement & Contract Administration"]
+    },
+    "constructionManagement": {
+      "title": "Construction Management & Supervision",
+      "description": "Ensuring the highest standards of quality, safety, and excellence throughout every construction phase.",
+      "items": ["Site Supervision", "Quality Assurance & Control", "Health & Safety Management"]
+    }
+  },
+  "projects": {
+    "title": "Our Projects",
+    "subtitle": "A portfolio of excellence across multiple sectors",
+    "viewAll": "View All Projects",
+    "viewProject": "View Project",
+    "categories": {
+      "all": "All",
+      "educational": "Educational",
+      "medical": "Medical",
+      "residential": "Residential & Commercial",
+      "infrastructure": "Infrastructure"
+    },
+    "backToProjects": "Back to Projects",
+    "projectDetails": "Project Details",
+    "keyFeatures": "Key Features",
+    "engineeringRole": "MEC's Engineering Role",
+    "technicalScope": "Technical Scope",
+    "technicalScopeItems": [
+      "Topographic surveying using the latest surveying equipment",
+      "Structural studies providing cost-effective solutions without compromising safety",
+      "MEP systems (Mechanical, Electrical, Plumbing) and firefighting design",
+      "Landscape design for green spaces and aesthetics surrounding the buildings"
+    ],
+    "location": "Location",
+    "items": [
+      {
+        "slug": "merit-university",
+        "title": "Merit University",
+        "category": "educational",
+        "location": "Sohag, Egypt",
+        "description": "A modern campus featuring faculties of Medicine, Physiotherapy, and Pharmacy with cutting-edge open-space design.",
+        "fullDescription": "A massive educational edifice spanning a vast area, designed to be a beacon of education in Upper Egypt. The campus brings together multiple faculties under one cohesive architectural vision.",
+        "features": [
+          "Faculty of Medicine: Administrative buildings and lecture halls equipped with the latest technological facilities",
+          "Faculty of Physiotherapy: Includes specialized laboratories and practical training halls",
+          "Faculty of Pharmacy: Design that considers safety standards and modern chemical laboratories"
+        ],
+        "mecRole": "Complete engineering consultancy, architectural design, and execution supervision to ensure compliance with international standards for educational facilities."
+      },
+      {
+        "slug": "assiut-university",
+        "title": "Assiut University",
+        "category": "educational",
+        "location": "Assiut, Egypt",
+        "description": "Consultancy services for university facilities and infrastructure development.",
+        "fullDescription": "A comprehensive development and modernization project for multiple university buildings at Assiut University, one of the oldest and most prestigious universities in Upper Egypt.",
+        "features": [
+          "Structural and architectural design to enhance the efficiency of existing facilities",
+          "Focus on accommodating increased student capacity",
+          "Facade development and modernization"
+        ],
+        "mecRole": "Structural and architectural design to improve the efficiency of existing facilities, with a focus on accommodating student density and developing facades."
+      },
+      {
+        "slug": "lifer-medical-park",
+        "title": "Lifer Medical Park",
+        "category": "medical",
+        "location": "Upper Egypt",
+        "description": "An integrated medical center with specialized clinics, radiology centers, and laboratories.",
+        "fullDescription": "The first integrated medical complex serving the South Upper Egypt region, designed to provide comprehensive healthcare services under one roof with world-class standards.",
+        "features": [
+          "Specialized clinics with various sizes to accommodate different medical specialties",
+          "Advanced radiology centers and diagnostic laboratories",
+          "Design compliant with hospital codes for corridors, medical elevators, and fire-fighting systems"
+        ],
+        "mecRole": "Architectural and interior design (Interior Design) along with medical pathway planning to ensure optimal patient flow and healthcare delivery."
+      },
+      {
+        "slug": "3i-pharma",
+        "title": "3i Pharma",
+        "category": "medical",
+        "location": "Egypt",
+        "description": "A pharmaceutical complex with warehousing and distribution facilities meeting international storage standards.",
+        "fullDescription": "A chain of pharmaceutical branches and pharmaceutical storage warehouses designed to meet the highest international standards for drug storage and distribution.",
+        "features": [
+          "Advanced cooling and insulation systems (Cold Chain)",
+          "Good Storage Practice (GSP) compliance in structural and mechanical design",
+          "Distribution facility optimization for pharmaceutical logistics"
+        ],
+        "mecRole": "Focus on cooling and insulation systems (Cold Chain) and Good Storage Practice (GSP) standards in structural and mechanical design."
+      },
+      {
+        "slug": "crown-key",
+        "title": "Crown Key",
+        "category": "residential",
+        "location": "Egypt",
+        "description": "A luxury residential compound focused on privacy, comfort, and premium living.",
+        "fullDescription": "A residential compound that aims to introduce a new concept of luxury living, combining modern smart home technology with lush green spaces and premium security services.",
+        "features": [
+          "Residential units with Smart Home systems",
+          "Advanced green spaces and landscape design",
+          "High-end security services and privacy features"
+        ],
+        "mecRole": "Master Plan preparation, architectural facade design, and full project management to deliver a premium living experience."
+      },
+      {
+        "slug": "heraa-projects",
+        "title": "Heraa Projects",
+        "category": "residential",
+        "location": "Sohag & Assiut, Egypt",
+        "description": "Residential and commercial tower development in Sohag and Assiut in collaboration with Heraa Company.",
+        "fullDescription": "A collection of residential and commercial administrative towers at strategic locations, developed in collaboration with Heraa Engineering Development Company.",
+        "features": [
+          "Contemporary designs that smartly utilize spaces",
+          "Underground parking garages",
+          "Commercial areas on the ground floors for mixed-use development"
+        ],
+        "mecRole": "Contemporary architectural designs that smartly utilize spaces, with underground garages and commercial areas on the ground floors."
+      },
+      {
+        "slug": "manqabad-bridge",
+        "title": "Manqabad Overpass Bridge",
+        "category": "infrastructure",
+        "location": "Assiut, Egypt",
+        "description": "Engineering supervision and structural quality assurance for the Manqabad overpass in Assiut.",
+        "fullDescription": "A national project to alleviate traffic congestion at the northern entrance of Assiut, involving complex deep foundation work and strict quality control.",
+        "features": [
+          "Supervision of deep foundation execution (piling works)",
+          "Quality control of concrete and steel materials used",
+          "Verification of slope ratios and asphalt specifications per the Egyptian Roads Code"
+        ],
+        "mecRole": "Engineering supervision on deep foundation execution, concrete and steel quality monitoring, and ensuring compliance with the Egyptian Roads Code."
+      }
+    ]
+  },
+  "testimonials": {
+    "title": "What Our Clients Say",
+    "subtitle": "Trusted by industry leaders across Egypt",
+    "items": [
+      {
+        "name": "Dr. Hani Fathi",
+        "company": "3i Pharma",
+        "quote": "Honestly, everything was exceptional. I sincerely wish all companies would follow your lead in delivering first-class service and quality."
+      },
+      {
+        "name": "Dr. Gamal Qurashi",
+        "company": "Merit University, Vice Chairman",
+        "quote": "I would like to express my sincere gratitude to the MEC engineering team for their outstanding efforts in development, seamless integration of innovative ideas, and exceptional creativity."
+      },
+      {
+        "name": "Eng. Ayman Abu El-Ala",
+        "company": "Heraa Company, Founder & Chairman",
+        "quote": "We at Heraa Engineering Development express our deep happiness and gratitude for our collaboration with MEC. The teamwork and expertise have greatly contributed to the success of our joint projects."
+      }
+    ]
+  },
+  "news": {
+    "title": "Engineering Events & Updates",
+    "subtitle": "Stay up to date with the latest from MEC",
+    "readMore": "Read More",
+    "items": [
+      {
+        "slug": "mec-assiut-career-fair",
+        "title": "MEC at Assiut University Engineering Career Fair",
+        "excerpt": "MEC participated in the first Engineering Career Fair at Assiut University, engaging with top engineering talent.",
+        "date": "2024-03-15"
+      },
+      {
+        "slug": "lifer-medical-park-launch",
+        "title": "Lifer Medical Park Project Launch",
+        "excerpt": "The official launch of the Lifer Medical Park project marks a new milestone in healthcare infrastructure.",
+        "date": "2024-02-20"
+      },
+      {
+        "slug": "iso-certification",
+        "title": "MEC Receives ISO 9001 Certification",
+        "excerpt": "MEC has achieved ISO 9001 certification in Quality Management, reaffirming our commitment to excellence.",
+        "date": "2024-01-10"
+      },
+      {
+        "slug": "manqabad-bridge-project",
+        "title": "Manqabad Overpass Bridge in Assiut",
+        "excerpt": "Progress update on the engineering supervision for the Manqabad overpass bridge in Assiut.",
+        "date": "2023-12-05"
+      }
+    ]
+  },
+  "team": {
+    "title": "Our Team",
+    "subtitle": "A team of dedicated professionals driving excellence",
+    "boardTitle": "Board of Directors",
+    "boardDescription": "An elite group of consultants specializing in civil and architectural engineering.",
+    "leaders": [
+      {
+        "name": "Prof. Hesham M. Diab",
+        "role": "Chairman",
+        "image": "/team/hesham.png",
+        "description": [
+          "Reinforced concrete professor in the civil engineering department within Assiut's faculty of engineering",
+          "Chairman of Middle East for engineering consultants",
+          "Consultant in design of concrete structures (Engineers syndicate)",
+          "Engineering consultancy officer for the transfer of industrial technology office within Assiut university"
+        ]
+      },
+      {
+        "name": "Eng. Khaled Abdelgaber",
+        "role": "CEO",
+        "image": "/team/khaled.png",
+        "description": [
+          "CEO for Middle East for engineering consultants",
+          "Member of federation of Arab engineers",
+          "Member of Egyptian society of engineers",
+          "Received a consultant degree in design of concrete structures from the Engineers syndicate with reference number (1/6016) by the date (14/7/2009)"
+        ]
+      }
+    ],
+    "otherMembersTitle": "Our Experts",
+    "otherMembers": [
+      { "name": "Eng. Ahmed Hassan", "role": "Vice Chairman" },
+      { "name": "Eng. Omar Farouk", "role": "COO" },
+      { "name": "Eng. Sarah Mansour", "role": "Lead Architect" },
+      { "name": "Eng. Tarek Youssef", "role": "Project Manager" },
+      { "name": "Eng. Noha Samir", "role": "Structural Engineer" }
+    ],
+    "departmentsTitle": "Our Departments",
+    "departments": [
+      { "name": "Design Department", "icon": "design" },
+      { "name": "Execution Supervision", "icon": "supervision" },
+      { "name": "Project Management", "icon": "management" },
+      { "name": "Administration", "icon": "admin" }
+    ],
+    "vision": "Vision",
+    "visionText": "To lead in providing innovative engineering solutions across the Middle East region."
+  },
+  "joinUs": {
+    "title": "Join Our Team",
+    "subtitle": "We're always looking for talented engineers to join our growing family",
+    "positions": "Positions We Regularly Hire",
+    "positionsList": ["Civil Engineer", "Architect", "Electrical Engineer", "Mechanical Engineer"],
+    "form": {
+      "name": "Full Name",
+      "email": "Email Address",
+      "phone": "Phone Number",
+      "position": "Position Applied For",
+      "message": "Cover Letter",
+      "cv": "Upload CV",
+      "submit": "Submit Application",
+      "success": "Thank you! Your application has been received."
+    }
+  },
+  "contact": {
+    "title": "Contact Us",
+    "subtitle": "Get in touch with our team",
+    "getInTouch": "Get in Touch",
+    "sendMessage": "Send Message",
+    "branches": "Our Branches",
+    "phone": "Phone",
+    "email": "Email",
+    "form": {
+      "name": "Your Name",
+      "email": "Email Address",
+      "subject": "Subject",
+      "message": "Your Message",
+      "submit": "Send Message",
+      "success": "Thank you! We'll get back to you shortly."
+    },
+    "locations": [
+      {
+        "city": "Sohag",
+        "label": "Head Office",
+        "address": "East Insurance Towers, 3rd Floor, Assiut-Sohag Road"
+      },
+      {
+        "city": "Assiut",
+        "label": "Branch Office",
+        "address": "6 El-Bahr Street, Opposite Assiut Barrages, El-Sheilah Tower, 4th Floor"
+      },
+      {
+        "city": "Giza",
+        "label": "Branch Office",
+        "address": "51B Tanta Street, Agouza"
+      }
+    ]
+  },
+  "footer": {
+    "description": "Middle East Consultants (MEC) — Leading engineering consultancy firm with 24+ years of expertise in architecture, project management, and construction supervision across Egypt.",
+    "quickLinks": "Quick Links",
+    "contactInfo": "Contact Info",
+    "externalLinks": "Useful Links",
+    "external": [
+      { "name": "Egyptian Engineers Syndicate", "url": "#" },
+      { "name": "Arab Engineers Union", "url": "#" },
+      { "name": "Egyptian Government Portal", "url": "#" },
+      { "name": "Housing & Development Bank", "url": "#" }
+    ],
+    "rights": "All Rights Reserved",
+    "emailAddress": "info@mecegy.com",
+    "phoneNumber": "+20932717700"
+  },
+  "common": {
+    "readMore": "Read More",
+    "learnMore": "Learn More",
+    "viewAll": "View All",
+    "backToHome": "Back to Home",
+    "loading": "Loading..."
+  }
+}
