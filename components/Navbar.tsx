@@ -138,14 +138,7 @@ export function Navbar({ dict, lang }: NavbarProps) {
       <div className={`mobile-menu ${menuOpen ? "open" : ""}`}>
         {/* Replaced redundant X button with hamburger state management */}
 
-        <Image
-          src="/logo.svg"
-          alt="MEC Logo"
-          width={160}
-          height={68}
-          style={{ height: "52px", width: "auto", filter: "brightness(0) invert(1)", marginBottom: "1rem" }}
-          unoptimized
-        />
+        {/* Removed logo from mobile menu per user request */}
 
         {navLinks.map((link) => (
           <Link
