@@ -52,12 +52,14 @@ export function Navbar({ dict, lang }: NavbarProps) {
       <nav className={`navbar ${menuOpen ? "navbar-menu-open" : (showSolid ? "navbar-solid" : "navbar-transparent")}`}>
         <div
           style={{
+            width: "100%",
             maxWidth: "1280px",
             margin: "0 auto",
             padding: "0.875rem 1.5rem",
             display: "flex",
             alignItems: "center",
             justifyContent: "space-between",
+            boxSizing: "border-box",
           }}
         >
           {/* Logo */}
@@ -101,36 +103,42 @@ export function Navbar({ dict, lang }: NavbarProps) {
                 </Link>
               );
             })}
-
-            {/* Language Switcher */}
-            <div className="lang-switcher">
-              <Link
-                href={lang === "en" ? pathname : switchPath}
-                className={`lang-btn ${lang === "en" ? "active" : ""}`}
-                style={{ color: lang === "en" ? "#fff" : (showSolid ? "#1f2937" : "#fff") }}
-              >
-                EN
-              </Link>
-              <Link
-                href={lang === "ar" ? pathname : switchPath}
-                className={`lang-btn ${lang === "ar" ? "active" : ""}`}
-                style={{ color: lang === "ar" ? "#fff" : (showSolid ? "#1f2937" : "#fff") }}
-              >
-                عربي
-              </Link>
-            </div>
           </div>
 
-          {/* Hamburger */}
-          <button
-            className={`hamburger ${menuOpen ? "open" : ""}`}
-            onClick={() => setMenuOpen(!menuOpen)}
-            aria-label="Toggle menu"
-          >
-            <span />
-            <span />
-            <span />
-          </button>
+          {/* Action Group (Lang switcher + Hamburger) */}
+          <div style={{ display: "flex", alignItems: "center", gap: "1.25rem", boxSizing: "border-box" }}>
+            {/* Language Switcher - Shows only unselected language */}
+            <Link
+              href={switchPath}
+              className="lang-switch-btn"
+              style={{
+                color: (showSolid && !menuOpen) ? "#1f2937" : "#ffffff",
+                fontWeight: 600,
+                fontSize: "0.875rem",
+                textDecoration: "none",
+                padding: "0.4rem 0.85rem",
+                borderRadius: "8px",
+                border: "1px solid",
+                borderColor: (showSolid && !menuOpen) ? "rgba(31, 41, 55, 0.15)" : "rgba(255, 255, 255, 0.3)",
+                backgroundColor: (showSolid && !menuOpen) ? "rgba(31, 41, 55, 0.03)" : "rgba(255, 255, 255, 0.08)",
+                transition: "all 0.3s ease",
+                display: "inline-block"
+              }}
+            >
+              {lang === "en" ? "عربي" : "EN"}
+            </Link>
+
+            {/* Hamburger */}
+            <button
+              className={`hamburger ${menuOpen ? "open" : ""}`}
+              onClick={() => setMenuOpen(!menuOpen)}
+              aria-label="Toggle menu"
+            >
+              <span />
+              <span />
+              <span />
+            </button>
+          </div>
         </div>
       </nav>
 
@@ -152,38 +160,27 @@ export function Navbar({ dict, lang }: NavbarProps) {
           </Link>
         ))}
 
-        <div className="lang-switcher" style={{ marginTop: "1rem" }}>
+        <div className="mobile-lang-switcher" style={{ marginTop: "1rem" }}>
           <Link
-            href={lang === "en" ? pathname : switchPath}
-            className={`lang-btn ${lang === "en" ? "active" : ""}`}
+            href={switchPath}
             onClick={() => setMenuOpen(false)}
-            style={{ color: lang === "en" ? "#fff" : "#fff" }}
+            style={{
+              color: "#ffffff",
+              fontWeight: 600,
+              fontSize: "1.1rem",
+              textDecoration: "none",
+              padding: "0.5rem 1.5rem",
+              borderRadius: "30px",
+              border: "1px solid rgba(255, 255, 255, 0.3)",
+              backgroundColor: "rgba(255, 255, 255, 0.08)",
+              transition: "all 0.3s ease",
+              display: "inline-block",
+            }}
           >
-            English
-          </Link>
-          <Link
-            href={lang === "ar" ? pathname : switchPath}
-            className={`lang-btn ${lang === "ar" ? "active" : ""}`}
-            onClick={() => setMenuOpen(false)}
-            style={{ color: lang === "ar" ? "#fff" : "#fff" }}
-          >
-            العربية
+            {lang === "en" ? "العربية" : "English"}
           </Link>
         </div>
       </div>
-
-      <style jsx global>{`
-        @media (max-width: 1024px) {
-          .desktop-nav {
-            display: none !important;
-          }
-        }
-        @media (min-width: 1025px) {
-          .hamburger {
-            display: none !important;
-          }
-        }
-      `}</style>
     </>
   );
 }
