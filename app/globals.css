@@ -29,6 +29,13 @@
   box-sizing: border-box;
 }
 
+html,
+body {
+  overflow-x: hidden;
+  max-width: 100%;
+  width: 100%;
+}
+
 html {
   scroll-behavior: smooth;
 }
@@ -37,7 +44,6 @@ body {
   background: #ffffff;
   color: #1f2937;
   font-family: var(--font-sans);
-  overflow-x: hidden;
 }
 
 /* ====== RTL Support ====== */
@@ -294,6 +300,7 @@ body {
   top: 0;
   left: 0;
   right: 0;
+  box-sizing: border-box;
   z-index: 1000;
   transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
@@ -1280,7 +1287,7 @@ body {
 }
 
 /* ====== Responsive ====== */
-@media (max-width: 1200px) {
+@media (max-width: 768px) {
   .hamburger {
     display: flex !important;
   }
@@ -2088,6 +2095,7 @@ body {
   background: linear-gradient(160deg, #163029 0%, #0e1f1a 100%);
   margin-top: -2rem;
   clip-path: polygon(0 8%, 100% 0, 100% 100%, 0 100%);
+  overflow: hidden; /* Prevent circular background glow from causing horizontal scroll */
 }
 .cta-diagonal-inner {
   max-width: 800px;

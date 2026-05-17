@@ -108,25 +108,26 @@ export function Navbar({ dict, lang }: NavbarProps) {
           {/* Action Group (Lang switcher + Hamburger) */}
           <div style={{ display: "flex", alignItems: "center", gap: "1.25rem", boxSizing: "border-box" }}>
             {/* Language Switcher - Shows only unselected language */}
-            <Link
-              href={switchPath}
-              className="lang-switch-btn"
-              style={{
-                color: (showSolid && !menuOpen) ? "#1f2937" : "#ffffff",
-                fontWeight: 600,
-                fontSize: "0.875rem",
-                textDecoration: "none",
-                padding: "0.4rem 0.85rem",
-                borderRadius: "8px",
-                border: "1px solid",
-                borderColor: (showSolid && !menuOpen) ? "rgba(31, 41, 55, 0.15)" : "rgba(255, 255, 255, 0.3)",
-                backgroundColor: (showSolid && !menuOpen) ? "rgba(31, 41, 55, 0.03)" : "rgba(255, 255, 255, 0.08)",
-                transition: "all 0.3s ease",
-                display: "inline-block"
-              }}
-            >
-              {lang === "en" ? "عربي" : "EN"}
-            </Link>
+            {!menuOpen && (
+              <Link
+                href={switchPath}
+                className="lang-switch-btn"
+                style={{
+                  color: showSolid ? "#1f2937" : "#ffffff",
+                  fontWeight: 400,
+                  fontSize: "0.875rem",
+                  textDecoration: "none",
+                  padding: "0.4rem 0.85rem",
+                  borderRadius: "8px",
+                  borderColor: showSolid ? "rgba(31, 41, 55, 0.15)" : "rgba(255, 255, 255, 0.3)",
+                  backgroundColor: showSolid ? "rgba(31, 41, 55, 0.03)" : "rgba(255, 255, 255, 0.08)",
+                  transition: "all 0.3s ease",
+                  display: "inline-block"
+                }}
+              >
+                {lang === "en" ? "عربي" : "EN"}
+              </Link>
+            )}
 
             {/* Hamburger */}
             <button
