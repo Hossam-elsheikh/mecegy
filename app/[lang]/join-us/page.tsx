@@ -3,6 +3,7 @@ import { notFound } from "next/navigation";
 import type { Metadata } from "next";
 import { HardHat, Landmark, Zap, Settings, CircleCheck, FileUp } from "lucide-react";
 import type { LucideIcon } from "lucide-react";
+import PageHero from "@/components/PageHero";
 
 const positionIcons: LucideIcon[] = [HardHat, Landmark, Zap, Settings];
 
@@ -20,13 +21,11 @@ export default async function JoinUsPage({ params }: { params: Promise<{ lang: s
 
   return (
     <>
-      <section style={{ paddingTop: "8rem", paddingBottom: "4rem", background: "linear-gradient(135deg, #163029 0%, #1E4D3F 100%)", textAlign: "center", position: "relative", overflow: "hidden" }}>
-        <div style={{ position: "absolute", top: "-80px", left: "-80px", width: "300px", height: "300px", borderRadius: "50%", background: "rgba(242,139,45,0.08)" }} />
-        <div style={{ position: "relative", zIndex: 1, padding: "0 1.5rem" }}>
-          <h1 style={{ fontSize: "clamp(2.5rem, 5vw, 3.5rem)", fontWeight: 800, color: "#ffffff", marginBottom: "1rem" }}>{dict.joinUs.title}</h1>
-          <p style={{ color: "rgba(255,255,255,0.8)", fontSize: "1.1rem", maxWidth: "600px", margin: "0 auto" }}>{dict.joinUs.subtitle}</p>
-        </div>
-      </section>
+      <PageHero
+        label={lang === "ar" ? "وظائف" : "Careers"}
+        title={dict.joinUs.title}
+        subtitle={dict.joinUs.subtitle}
+      />
 
       <section style={{ padding: "5rem 1.5rem" }}>
         <div style={{ maxWidth: "1000px", margin: "0 auto", display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(300px, 1fr))", gap: "3rem" }}>

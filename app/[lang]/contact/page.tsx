@@ -2,6 +2,7 @@ import { getDictionary, hasLocale } from "../dictionaries";
 import { notFound } from "next/navigation";
 import type { Metadata } from "next";
 import { Mail, Phone, MapPin } from "lucide-react";
+import PageHero from "@/components/PageHero";
 
 export async function generateMetadata({ params }: { params: Promise<{ lang: string }> }): Promise<Metadata> {
   const { lang } = await params;
@@ -17,12 +18,11 @@ export default async function ContactPage({ params }: { params: Promise<{ lang: 
 
   return (
     <>
-      <section style={{ paddingTop: "8rem", paddingBottom: "4rem", background: "linear-gradient(135deg, #163029 0%, #1E4D3F 100%)", textAlign: "center" }}>
-        <div style={{ padding: "0 1.5rem" }}>
-          <h1 style={{ fontSize: "clamp(2.5rem, 5vw, 3.5rem)", fontWeight: 800, color: "#ffffff", marginBottom: "1rem" }}>{dict.contact.title}</h1>
-          <p style={{ color: "rgba(255,255,255,0.8)", fontSize: "1.1rem", maxWidth: "600px", margin: "0 auto" }}>{dict.contact.subtitle}</p>
-        </div>
-      </section>
+      <PageHero
+        label={lang === "ar" ? "تواصل معنا" : "Get in Touch"}
+        title={dict.contact.title}
+        subtitle={dict.contact.subtitle}
+      />
 
       <section style={{ padding: "5rem 1.5rem" }}>
         <div style={{ maxWidth: "1280px", margin: "0 auto", display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(340px, 1fr))", gap: "3rem" }}>

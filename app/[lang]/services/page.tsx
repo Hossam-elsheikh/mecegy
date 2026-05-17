@@ -2,6 +2,7 @@ import { getDictionary, hasLocale } from "../dictionaries";
 import { notFound } from "next/navigation";
 import type { Metadata } from "next";
 import { Landmark, ClipboardList, HardHat, CircleCheck } from "lucide-react";
+import PageHero from "@/components/PageHero";
 
 const serviceIcons = [Landmark, ClipboardList, HardHat];
 
@@ -40,27 +41,11 @@ export default async function ServicesPage({ params }: { params: Promise<{ lang:
 
   return (
     <>
-      {/* Page Header */}
-      <section
-        style={{
-          paddingTop: "8rem",
-          paddingBottom: "4rem",
-          background: "linear-gradient(135deg, #163029 0%, #1E4D3F 100%)",
-          textAlign: "center",
-          position: "relative",
-          overflow: "hidden",
-        }}
-      >
-        <div style={{ position: "absolute", top: "-80px", right: "-80px", width: "300px", height: "300px", borderRadius: "50%", background: "rgba(233, 80, 28, 0.08)" }} />
-        <div style={{ position: "relative", zIndex: 1, padding: "0 1.5rem" }}>
-          <h1 style={{ fontSize: "clamp(2.5rem, 5vw, 3.5rem)", fontWeight: 800, color: "#ffffff", marginBottom: "1rem" }}>
-            {dict.services.title}
-          </h1>
-          <p style={{ color: "rgba(255,255,255,0.8)", fontSize: "1.1rem", maxWidth: "600px", margin: "0 auto" }}>
-            {dict.services.subtitle}
-          </p>
-        </div>
-      </section>
+      <PageHero
+        label={lang === "ar" ? "ما نقدمه" : "What We Do"}
+        title={dict.services.title}
+        subtitle={dict.services.subtitle}
+      />
 
       {/* Services Detail */}
       <section style={{ padding: "5rem 1.5rem" }}>

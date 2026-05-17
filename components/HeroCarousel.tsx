@@ -24,6 +24,7 @@ const heroImages = [
 export function HeroCarousel({ slides, lang }: HeroCarouselProps) {
   const [current, setCurrent] = useState(0);
   const [isTransitioning, setIsTransitioning] = useState(false);
+  const isRTL = lang === "ar";
 
   const goToSlide = useCallback(
     (index: number) => {
@@ -43,103 +44,72 @@ export function HeroCarousel({ slides, lang }: HeroCarouselProps) {
   }, [current, slides.length, goToSlide]);
 
   return (
-    <section className="hero-carousel" id="hero">
-      {slides.map((slide, index) => (
+    <section className="hero-v2" id="hero">
+      {/* Background layers */}
+      {slides.map((_, index) => (
         <div
           key={index}
-          className={`hero-slide ${index === current ? "active" : ""}`}
-        >
-          <div
-            className="hero-slide-bg"
-            style={{
-              backgroundImage: `url(${heroImages[index % heroImages.length]})`,
-              animationDelay: `${index * 2}s`,
-            }}
-          />
-          <div className="hero-overlay" />
-          <div className="hero-content">
+          className={`hero-v2-bg ${index === current ? "active" : ""}`}
+          style={{ backgroundImage: `url(${heroImages[index % heroImages.length]})` }}
+        />
+      ))}
+      <div className="hero-v2-overlay" />
+
+      {/* Decorative elements */}
+      <div className="hero-v2-grid-lines" />
+      <div className="hero-v2-accent-line" />
+      <div className="hero-v2-floating-badge">
+        <span className="hero-v2-badge-num">24</span>
+        <span className="hero-v2-badge-label">{lang === "ar" ? "سنة خبرة" : "Years of\nExcellence"}</span>
+      </div>
+
+      {/* Content — left aligned, massive type */}
+      <div className="hero-v2-content">
+        <div style={{ position: "relative" }}>
+          {slides.map((slide, index) => (
             <div
+              key={index}
+              className="hero-v2-text-wrap"
               style={{
-                transform: index === current ? "translateY(0)" : "translateY(30px)",
                 opacity: index === current ? 1 : 0,
-                transition: "all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.3s",
+                transform: index === current ? "none" : "translateY(40px)",
+                pointerEvents: index === current ? "auto" : "none",
+                transition: "all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94)",
+                position: index === 0 ? "relative" : "absolute",
+                bottom: index === 0 ? undefined : 0,
+                left: index === 0 ? undefined : 0,
+                right: index === 0 ? undefined : 0,
               }}
             >
-              <h1 className="hero-title">{slide.title}</h1>
-              <p className="hero-subtitle">{slide.subtitle}</p>
-              <div style={{ display: "flex", gap: "1rem", justifyContent: "center", flexWrap: "wrap" }}>
+              <p className="hero-v2-subtitle">{slide.subtitle}</p>
+              <h1 className="hero-v2-title">{slide.title}</h1>
+              <div className="hero-v2-cta">
                 <Link href={`/${lang}/services`} className="btn-primary">
-                  {lang === "ar" ? "خدماتنا" : "Our Services"} →
+                  {lang === "ar" ? "خدماتنا" : "Explore Services"} →
                 </Link>
-                <Link href={`/${lang}/contact`} className="btn-secondary">
-                  {lang === "ar" ? "تواصل معنا" : "Contact Us"}
+                <Link href={`/${lang}/contact`} className="btn-ghost">
+                  {lang === "ar" ? "تواصل معنا" : "Get in Touch"}
                 </Link>
               </div>
             </div>
-          </div>
+          ))}
         </div>
-      ))}
+      </div>
 
-      {/* Navigation Dots */}
-      <div className="hero-dots">
+      {/* Vertical slide indicator */}
+      <div className="hero-v2-indicators">
         {slides.map((_, index) => (
           <button
             key={index}
-            className={`hero-dot ${index === current ? "active" : ""}`}
+            className={`hero-v2-ind ${index === current ? "active" : ""}`}
             onClick={() => goToSlide(index)}
-            aria-label={`Go to slide ${index + 1}`}
+            aria-label={`Slide ${index + 1}`}
           />
         ))}
+        <span className="hero-v2-counter">
+          {String(current + 1).padStart(2, "0")} / {String(slides.length).padStart(2, "0")}
+        </span>
       </div>
-
-      {/* Scroll indicator */}
-      <div
-        style={{
-          position: "absolute",
-          bottom: "5rem",
-          left: "50%",
-          transform: "translateX(-50%)",
-          zIndex: 20,
-          display: "flex",
-          flexDirection: "column",
-          alignItems: "center",
-          gap: "0.5rem",
-          animation: "bounce 2s infinite",
-        }}
-      >
-        <div
-          style={{
-            width: "28px",
-            height: "44px",
-            border: "2px solid rgba(255,255,255,0.5)",
-            borderRadius: "14px",
-            display: "flex",
-            justifyContent: "center",
-            paddingTop: "8px",
-          }}
-        >
-          <div
-            style={{
-              width: "4px",
-              height: "8px",
-              background: "#E9501C",
-              borderRadius: "2px",
-              animation: "scrollDown 2s infinite",
-            }}
-          />
-        </div>
-      </div>
-
-      <style jsx>{`
-        @keyframes bounce {
-          0%, 100% { transform: translateX(-50%) translateY(0); }
-          50% { transform: translateX(-50%) translateY(8px); }
-        }
-        @keyframes scrollDown {
-          0% { opacity: 1; transform: translateY(0); }
-          100% { opacity: 0; transform: translateY(12px); }
-        }
-      `}</style>
     </section>
   );
 }

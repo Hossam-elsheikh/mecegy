@@ -4,6 +4,7 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import TeamCarousel from "../../../components/TeamCarousel";
 import { Palette, HardHat, BarChart3, Briefcase, FolderOpen } from "lucide-react";
+import PageHero from "@/components/PageHero";
 
 const deptIconMap: Record<string, any> = { design: Palette, supervision: HardHat, management: BarChart3, admin: Briefcase };
 
@@ -23,14 +24,11 @@ export default async function TeamPage({ params }: { params: Promise<{ lang: str
 
   return (
     <>
-      {/* Hero Banner */}
-      <section style={{ paddingTop: "8rem", paddingBottom: "4rem", background: "linear-gradient(135deg, #163029 0%, #1E4D3F 100%)", textAlign: "center", position: "relative", overflow: "hidden" }}>
-        <div style={{ position: "absolute", bottom: "-100px", right: "-100px", width: "350px", height: "350px", borderRadius: "50%", background: "rgba(233,80,28,0.08)" }} />
-        <div style={{ position: "relative", zIndex: 1, padding: "0 1.5rem" }}>
-          <h1 style={{ fontSize: "clamp(2.5rem, 5vw, 3.5rem)", fontWeight: 800, color: "#ffffff", marginBottom: "1rem" }}>{dict.team.title}</h1>
-          <p style={{ color: "rgba(255,255,255,0.8)", fontSize: "1.1rem", maxWidth: "600px", margin: "0 auto" }}>{dict.team.subtitle}</p>
-        </div>
-      </section>
+      <PageHero
+        label={lang === "ar" ? "فريقنا" : "Meet the Team"}
+        title={dict.team.title}
+        subtitle={dict.team.subtitle}
+      />
 
       <section style={{ padding: "5rem 1.5rem" }}>
         <div style={{ maxWidth: "1280px", margin: "0 auto" }}>
