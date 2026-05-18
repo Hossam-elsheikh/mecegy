@@ -7,15 +7,7 @@ import { Landmark, ClipboardList, HardHat } from "lucide-react";
 import MarqueeStrip from "@/components/MarqueeStrip";
 import TestimonialSpotlight from "@/components/TestimonialSpotlight";
 
-const projectImages = [
-  "https://images.unsplash.com/photo-1562516155-e0c1ee44059b?w=800&q=80",
-  "https://images.unsplash.com/photo-1497366216548-37526070297c?w=800&q=80",
-  "https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?w=800&q=80",
-  "https://images.unsplash.com/photo-1587351021759-3e566b6af7cc?w=800&q=80",
-  "https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?w=800&q=80",
-  "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=800&q=80",
-  "https://images.unsplash.com/photo-1590674899484-d5640e854abe?w=800&q=80",
-];
+const fallbackImage = "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=800&q=80";
 
 export default async function HomePage({
   params,
@@ -180,7 +172,7 @@ export default async function HomePage({
               className="project-card"
             >
               <Image
-                src={projectImages[i % projectImages.length]}
+                src={project.image || fallbackImage}
                 alt={project.title}
                 fill
                 sizes="(max-width: 768px) 100vw, 50vw"
@@ -242,13 +234,22 @@ export default async function HomePage({
           </div>
 
           <div className="scroll-animate news-editorial">
-            {dict.news.items.map((article: any, i: number) => (
+            {dict.news.items.slice(0, 4).map((article: any, i: number) => (
               <Link
                 key={i}
                 href={`/${lang}/news/${article.slug}`}
                 className="news-row"
               >
                 <span className="news-row-date">{article.date}</span>
+                <div className="news-row-img-wrap">
+                  <Image
+                    src={article.image}
+                    alt={article.title}
+                    fill
+                    sizes="80px"
+                    style={{ objectFit: "cover" }}
+                  />
+                </div>
                 <div>
                   <h3 className="news-row-title">{article.title}</h3>
                   <p className="news-row-excerpt">{article.excerpt}</p>

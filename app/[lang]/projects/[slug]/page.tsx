@@ -6,15 +6,7 @@ import Link from "next/link";
 import { GraduationCap, Hospital, Home, Construction, FolderOpen, MapPin, HardHat, Compass, Wrench, Zap, TreePine } from "lucide-react";
 import type { LucideIcon } from "lucide-react";
 
-const projectImages: Record<string, string> = {
-  "merit-university": "https://images.unsplash.com/photo-1562516155-e0c1ee44059b?w=1200&q=80",
-  "assiut-university": "https://images.unsplash.com/photo-1497366216548-37526070297c?w=1200&q=80",
-  "lifer-medical-park": "https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?w=1200&q=80",
-  "3i-pharma": "https://images.unsplash.com/photo-1587351021759-3e566b6af7cc?w=1200&q=80",
-  "crown-key": "https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?w=1200&q=80",
-  "heraa-projects": "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=1200&q=80",
-  "manqabad-bridge": "https://images.unsplash.com/photo-1590674899484-d5640e854abe?w=1200&q=80",
-};
+const fallbackImage = "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=1200&q=80";
 
 const categoryIcons: Record<string, LucideIcon> = {
   educational: GraduationCap,
@@ -62,7 +54,7 @@ export default async function ProjectDetailPage({
   const project = dict.projects.items.find((p: any) => p.slug === slug);
   if (!project) notFound();
 
-  const heroImage = projectImages[slug] || projectImages["merit-university"];
+  const heroImage = project.image || fallbackImage;
   const categoryLabel =
     dict.projects.categories[project.category as keyof typeof dict.projects.categories];
 

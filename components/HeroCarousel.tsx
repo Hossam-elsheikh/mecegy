@@ -14,11 +14,11 @@ interface HeroCarouselProps {
 }
 
 const heroImages = [
-  "https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=1920&q=80",
-  "https://images.unsplash.com/photo-1486325212027-8081e485255e?w=1920&q=80",
-  "https://images.unsplash.com/photo-1487958449943-2429e8be8625?w=1920&q=80",
-  "https://images.unsplash.com/photo-1541888946425-d81bb19240f5?w=1920&q=80",
-  "https://images.unsplash.com/photo-1503387762-592deb58ef4e?w=1920&q=80",
+  "https://mecegy.com/media/photos/25/01/05/Tibih_univeristy.jpg",
+  "https://mecegy.com/media/photos/25/01/05/172307208_172631204710817_7789116615953946540_n.jpg",
+  "https://mecegy.com/media/photos/25/01/05/DJI_0645.jpg",
+  "https://mecegy.com/media/photos/25/01/05/cairo_American_2.jpg",
+  "https://mecegy.com/media/photos/25/03/20/ManqabadBridge_02.jpg",
 ];
 
 export function HeroCarousel({ slides, lang }: HeroCarouselProps) {
@@ -46,13 +46,41 @@ export function HeroCarousel({ slides, lang }: HeroCarouselProps) {
   return (
     <section className="hero-v2" id="hero">
       {/* Background layers */}
-      {slides.map((_, index) => (
-        <div
-          key={index}
-          className={`hero-v2-bg ${index === current ? "active" : ""}`}
-          style={{ backgroundImage: `url(${heroImages[index % heroImages.length]})` }}
-        />
-      ))}
+      {slides.map((_, index) => {
+        if (index === 0) {
+          return (
+            <div
+              key={index}
+              className={`hero-v2-bg ${index === current ? "active" : ""}`}
+              style={{ background: "#0a1a15" }}
+            >
+              <video
+                src="https://mecegy.com/static/vid/slider.mp4"
+                autoPlay
+                loop
+                muted
+                playsInline
+                style={{
+                  objectFit: "cover",
+                  width: "100%",
+                  height: "100%",
+                  position: "absolute",
+                  top: 0,
+                  left: 0,
+                }}
+              />
+            </div>
+          );
+        }
+        const imgUrl = heroImages[(index - 1) % heroImages.length];
+        return (
+          <div
+            key={index}
+            className={`hero-v2-bg ${index === current ? "active" : ""}`}
+            style={{ backgroundImage: `url(${imgUrl})` }}
+          />
+        );
+      })}
       <div className="hero-v2-overlay" />
 
       {/* Decorative elements */}

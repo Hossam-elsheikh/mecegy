@@ -9,15 +9,7 @@ interface ProjectsClientProps {
   lang: string;
 }
 
-const projectImages = [
-  "https://images.unsplash.com/photo-1562516155-e0c1ee44059b?w=800&q=80",
-  "https://images.unsplash.com/photo-1497366216548-37526070297c?w=800&q=80",
-  "https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?w=800&q=80",
-  "https://images.unsplash.com/photo-1587351021759-3e566b6af7cc?w=800&q=80",
-  "https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?w=800&q=80",
-  "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=800&q=80",
-  "https://images.unsplash.com/photo-1590674899484-d5640e854abe?w=800&q=80",
-];
+const fallbackImage = "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=800&q=80";
 
 export function ProjectsClient({ dict, lang }: ProjectsClientProps) {
   const [activeCategory, setActiveCategory] = useState("all");
@@ -76,7 +68,7 @@ export function ProjectsClient({ dict, lang }: ProjectsClientProps) {
               }}
             >
               <Image
-                src={projectImages[i % projectImages.length]}
+                src={project.image || fallbackImage}
                 alt={project.title}
                 fill
                 sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"

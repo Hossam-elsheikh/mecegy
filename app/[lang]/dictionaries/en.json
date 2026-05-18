@@ -33,6 +33,10 @@
       {
         "title": "For Your Luxury Life",
         "subtitle": "Premium construction & design excellence"
+      },
+      {
+        "title": "Engineering the Future",
+        "subtitle": "Sustainable and iconic infrastructure developments"
       }
     ]
   },
@@ -92,102 +96,109 @@
     "location": "Location",
     "items": [
       {
-        "slug": "merit-university",
-        "title": "Merit University",
+        "slug": "taibah-university",
+        "title": "Taibah University - Faculty of Medicine",
         "category": "educational",
+        "location": "Medina, Saudi Arabia",
+        "image": "https://mecegy.com/media/photos/25/01/05/Tibih_univeristy.jpg",
+        "description": "Comprehensive engineering solutions including HVAC, firefighting, plumbing, power, lighting, low-current systems, and shop drawing works for Taibah University's Faculty of Medicine.",
+        "fullDescription": "Our consultancy provided comprehensive engineering solutions, including HVAC, firefighting, plumbing, power, lighting, and low-current systems, for Taibah University's Faculty of Medicine. The project, spanning four floors with a total area of 13,000 square meters each, also involved shop drawing works. Our integrated approach ensured safety, efficiency, and sustainability, delivering comfortable indoor conditions, fire safety measures, efficient water management, and reliable power distribution. Adhering to regulations and standards, we tailored high-quality solutions to the facility's specific needs.",
+        "features": [
+          "Comprehensive MEP design: HVAC, Firefighting, Plumbing, and Electrical systems",
+          "Detailed shop drawings ensuring seamless execution across four floors",
+          "High-quality engineering solutions customized for a 13,000 sqm medical educational facility"
+        ],
+        "mecRole": "Comprehensive engineering consultancy, design of MEP and low-current systems, and shop drawing preparation in adherence to international healthcare educational standards."
+      },
+      {
+        "slug": "life-medical-park",
+        "title": "Life Medical Park",
+        "category": "medical",
         "location": "Sohag, Egypt",
-        "description": "A modern campus featuring faculties of Medicine, Physiotherapy, and Pharmacy with cutting-edge open-space design.",
-        "fullDescription": "A massive educational edifice spanning a vast area, designed to be a beacon of education in Upper Egypt. The campus brings together multiple faculties under one cohesive architectural vision.",
+        "image": "https://mecegy.com/media/photos/25/01/05/172307208_172631204710817_7789116615953946540_n.jpg",
+        "description": "An advanced medical park encompassing a hospital and clinics with 200 beds situated on a flat plot of 9,000 square meters and 20,000 square meters of built-up area.",
+        "fullDescription": "The Life Medical Hospital project encompasses a hospital and medical clinics with 200 beds situated on a flat plot spanning 9,000 square meters, with a total built-up area of 20,000 square meters. It features both public and private sections, along with rehabilitation centers, intensive care rooms, and surgical operation theaters. With cutting-edge medical technology and a commitment to patient care, it represents a significant advancement in healthcare delivery for the community it serves.",
         "features": [
-          "Faculty of Medicine: Administrative buildings and lecture halls equipped with the latest technological facilities",
-          "Faculty of Physiotherapy: Includes specialized laboratories and practical training halls",
-          "Faculty of Pharmacy: Design that considers safety standards and modern chemical laboratories"
+          "Capacity of 200 beds across modern hospital units and specialized clinics",
+          "Total built-up area of 20,000 square meters optimized for patient care",
+          "Includes rehabilitation centers, intensive care units, and advanced operating theaters"
         ],
-        "mecRole": "Complete engineering consultancy, architectural design, and execution supervision to ensure compliance with international standards for educational facilities."
+        "mecRole": "Complete architectural and structural design, medical planning, and engineering consultancy to deliver a state-of-the-art healthcare environment."
       },
       {
-        "slug": "assiut-university",
-        "title": "Assiut University",
+        "slug": "retaj-1-compound",
+        "title": "Retaj 1 Compound",
+        "category": "residential",
+        "location": "New Sohag, Egypt",
+        "image": "https://mecegy.com/media/photos/25/01/05/DJI_0645.jpg",
+        "description": "Design, tender management, and MEP installations for a prestigious 16-acre compound in New Sohag featuring 60 villas, a clubhouse, and commercial buildings.",
+        "fullDescription": "Middle East Engineering Consultants spearheaded the design, tender management, and MEP (Mechanical, Electrical, and Plumbing) work for a compound in New Sohag spanning 16 acres. The development includes 60 villas, a club house, swimming pool, and a commercial building. Our expertise extended to fire systems and electromechanical installations, ensuring a comprehensive and efficient infrastructure for the entire compound.",
+        "features": [
+          "Extensive 16-acre master-planned residential and commercial compound",
+          "Consists of 60 premium villas, a modern clubhouse, and a swimming pool",
+          "Includes a dynamic commercial building and integrated community spaces"
+        ],
+        "mecRole": "Master planning, architectural and structural design, MEP engineering, tender management, and site supervision."
+      },
+      {
+        "slug": "cairo-american-school",
+        "title": "Cairo-American School",
         "category": "educational",
-        "location": "Assiut, Egypt",
-        "description": "Consultancy services for university facilities and infrastructure development.",
-        "fullDescription": "A comprehensive development and modernization project for multiple university buildings at Assiut University, one of the oldest and most prestigious universities in Upper Egypt.",
+        "location": "Cairo, Egypt",
+        "image": "https://mecegy.com/media/photos/25/01/05/cairo_American_2.jpg",
+        "description": "Structural design and construction supervision for an elite educational institution covering 12,459 square meters, housing 70 classrooms and educational areas.",
+        "fullDescription": "The Cairo-American School integrates all stages of education, ranging from kindergarten to primary, preparatory, and secondary levels. Covering an area of 12,459 m2, the project meticulously adheres to GAEB requirements. Comprising 70 classrooms and additional educational spaces such as laboratories, administrative offices for managers and teachers, and multipurpose areas, this undertaking underscores our proficiency at MEC. Specifically, we took charge of the supervision and structural design aspects of this project, ensuring the highest standards of quality and compliance were met throughout its development.",
         "features": [
-          "Structural and architectural design to enhance the efficiency of existing facilities",
-          "Focus on accommodating increased student capacity",
-          "Facade development and modernization"
+          "Integrates all educational levels from kindergarten through secondary school",
+          "Total area of 12,459 square meters designed in accordance with GAEB requirements",
+          "Comprises 70 fully equipped classrooms, labs, offices, and multipurpose spaces"
         ],
-        "mecRole": "Structural and architectural design to improve the efficiency of existing facilities, with a focus on accommodating student density and developing facades."
+        "mecRole": "Complete structural design and comprehensive construction supervision to guarantee absolute safety and adherence to GAEB standards."
       },
       {
-        "slug": "lifer-medical-park",
-        "title": "Lifer Medical Park",
+        "slug": "al-monshaa-general-hospital",
+        "title": "Al-Monshaa General Hospital",
         "category": "medical",
-        "location": "Upper Egypt",
-        "description": "An integrated medical center with specialized clinics, radiology centers, and laboratories.",
-        "fullDescription": "The first integrated medical complex serving the South Upper Egypt region, designed to provide comprehensive healthcare services under one roof with world-class standards.",
+        "location": "Sohag, Egypt",
+        "image": "https://mecegy.com/media/photos/25/01/02/000.png",
+        "description": "A comprehensive healthcare development project, establishing 25 medical centers, 153 health units, and 35 ambulance points in Sohag.",
+        "fullDescription": "Middle East Engineering Consultants oversaw the comprehensive development project for Al-Monshaa Hospital in Sohag, Egypt. Our meticulous management of tenders and project execution ensured the establishment of 25 medical centers, optimization of 153 health units, and positioning of 35 ambulance points. Through our expertise, we enhanced healthcare infrastructure with 217 units, reflecting our commitment to improving accessibility and quality in Sohag",
         "features": [
-          "Specialized clinics with various sizes to accommodate different medical specialties",
-          "Advanced radiology centers and diagnostic laboratories",
-          "Design compliant with hospital codes for corridors, medical elevators, and fire-fighting systems"
+          "Large-scale medical development improving overall regional healthcare accessibility",
+          "Successful establishment of 25 modern medical centers and 35 strategic ambulance points",
+          "Optimization and upgrading of 153 health units across the governorate"
         ],
-        "mecRole": "Architectural and interior design (Interior Design) along with medical pathway planning to ensure optimal patient flow and healthcare delivery."
-      },
-      {
-        "slug": "3i-pharma",
-        "title": "3i Pharma",
-        "category": "medical",
-        "location": "Egypt",
-        "description": "A pharmaceutical complex with warehousing and distribution facilities meeting international storage standards.",
-        "fullDescription": "A chain of pharmaceutical branches and pharmaceutical storage warehouses designed to meet the highest international standards for drug storage and distribution.",
-        "features": [
-          "Advanced cooling and insulation systems (Cold Chain)",
-          "Good Storage Practice (GSP) compliance in structural and mechanical design",
-          "Distribution facility optimization for pharmaceutical logistics"
-        ],
-        "mecRole": "Focus on cooling and insulation systems (Cold Chain) and Good Storage Practice (GSP) standards in structural and mechanical design."
-      },
-      {
-        "slug": "crown-key",
-        "title": "Crown Key",
-        "category": "residential",
-        "location": "Egypt",
-        "description": "A luxury residential compound focused on privacy, comfort, and premium living.",
-        "fullDescription": "A residential compound that aims to introduce a new concept of luxury living, combining modern smart home technology with lush green spaces and premium security services.",
-        "features": [
-          "Residential units with Smart Home systems",
-          "Advanced green spaces and landscape design",
-          "High-end security services and privacy features"
-        ],
-        "mecRole": "Master Plan preparation, architectural facade design, and full project management to deliver a premium living experience."
-      },
-      {
-        "slug": "heraa-projects",
-        "title": "Heraa Projects",
-        "category": "residential",
-        "location": "Sohag & Assiut, Egypt",
-        "description": "Residential and commercial tower development in Sohag and Assiut in collaboration with Heraa Company.",
-        "fullDescription": "A collection of residential and commercial administrative towers at strategic locations, developed in collaboration with Heraa Engineering Development Company.",
-        "features": [
-          "Contemporary designs that smartly utilize spaces",
-          "Underground parking garages",
-          "Commercial areas on the ground floors for mixed-use development"
-        ],
-        "mecRole": "Contemporary architectural designs that smartly utilize spaces, with underground garages and commercial areas on the ground floors."
+        "mecRole": "Comprehensive project management, tender administration, structural engineering, and construction supervision of the multi-site healthcare units."
       },
       {
         "slug": "manqabad-bridge",
-        "title": "Manqabad Overpass Bridge",
+        "title": "Manqabad Overpass in Assiut",
         "category": "infrastructure",
         "location": "Assiut, Egypt",
-        "description": "Engineering supervision and structural quality assurance for the Manqabad overpass in Assiut.",
-        "fullDescription": "A national project to alleviate traffic congestion at the northern entrance of Assiut, involving complex deep foundation work and strict quality control.",
+        "image": "https://mecegy.com/media/photos/25/03/20/ManqabadBridge_02.jpg",
+        "description": "Strategic infrastructure project spanning 1,900 meters over the Cairo-Aswan railway, featuring a massive 34-meter, 175-ton steel span installed in record time.",
+        "fullDescription": "The project is being implemented to achieve the targeted plan for Assiut Governorate to solve the problem of railway level crossings, serve the city of Mankabad and its neighboring villages, and eliminate congestion at the city entrance. The total length of the bridge, including ramps and access roads, is 1,900 meters, with a width of 16.70 meters. It passes over the railway lines (Cairo - High Dam) and the watercourse of the Ibrahimia Canal. Arab Contractors Company has completed the installation of the main girders for the final steel span of the Mankabad Overpass project in Assiut Governorate, over the Cairo-Aswan railway lines. This was accomplished in a record time of just three hours, without disrupting train movement and while fully adhering to safety procedures. The steel span is 34 meters long, with a total weight of 175 tons. It was installed using a 400-ton structural crane. This is the last span to be implemented in the project, achieved through collaboration between the Assiut branch, the Central Workshops and Factories Administration, the Equipment Rental Administration, and the Heavy Transport Administration.",
         "features": [
-          "Supervision of deep foundation execution (piling works)",
-          "Quality control of concrete and steel materials used",
-          "Verification of slope ratios and asphalt specifications per the Egyptian Roads Code"
+          "Total bridge length of 1,900 meters with a width of 16.70 meters",
+          "Crosses over the busy Cairo-Aswan railway lines and the Ibrahimia Canal",
+          "Successful rapid installation of a 34-meter, 175-ton steel span in just 3 hours"
         ],
-        "mecRole": "Engineering supervision on deep foundation execution, concrete and steel quality monitoring, and ensuring compliance with the Egyptian Roads Code."
+        "mecRole": "Engineering supervision of deep foundation piling, concrete and steel quality control, slope verification, and coordination between multiple heavy engineering administrations."
+      },
+      {
+        "slug": "west-nile-corniche-expansion",
+        "title": "West Nile Corniche Expansion Project",
+        "category": "infrastructure",
+        "location": "Sohag, Egypt",
+        "image": "https://mecegy.com/media/photos/25/01/05/%D9%82.jpg",
+        "description": "A transformative waterfront initiative in Sohag, expanding the West Nile Corniche by 9 meters over a length of 1,200 meters.",
+        "fullDescription": "We are proud to lead the West Nile Corniche Expansion Project in Sohag, a transformative initiative to enhance the city’s waterfront. Responsible for design, supervision, and project management, we are delivering a 1,200-meter expansion by 9 meters within 24 months and an investment of EGP 75 million.",
+        "features": [
+          "Waterfront expansion spanning a total length of 1,200 meters",
+          "Widening the corniche road and pedestrian pathway by 9 meters",
+          "EGP 75 million investment aimed at enhancing local tourism and traffic flow"
+        ],
+        "mecRole": "Complete architectural and engineering design, environmental impact coordination, project management, and execution supervision over the 24-month timeline."
       }
     ]
   },
@@ -216,30 +227,52 @@
     "title": "Engineering Events & Updates",
     "subtitle": "Stay up to date with the latest from MEC",
     "readMore": "Read More",
+    "interactLinkedin": "Interact on LinkedIn",
     "items": [
       {
-        "slug": "mec-assiut-career-fair",
-        "title": "MEC at Assiut University Engineering Career Fair",
-        "excerpt": "MEC participated in the first Engineering Career Fair at Assiut University, engaging with top engineering talent.",
-        "date": "2024-03-15"
+        "slug": "syndicate-partnership",
+        "title": "MEC Partners with the Egyptian Engineers Syndicate to Empower Future Civil Engineers",
+        "excerpt": "We were thrilled to sponsor the employment fair by the Civil Engineering Division of the Egyptian Engineers Syndicate, supporting Egypt's young talent.",
+        "content": "We at Middle East Engineering Consultants (MEC) were thrilled to be one of the key sponsors of the employment fair organized by the Civil Engineering Division and the Employment Committee of the Egyptian Engineers Syndicate, as part of Civil Engineers' Day celebrations.\n\nThe event, attended by Eng. Tarek El-Nabrawy, head of the syndicate, highlighted the importance of continuous learning and skill development for young engineers. MEC received many CVs, offered job vacancies, and distributed valuable giveaways to participants—just the beginning of our commitment to supporting the future of civil engineering in Egypt.\n\nOur CEO Eng. Khaled Abdelgaber, Chairman Prof. Dr. Hesham Diab, and our engineering team were present to ensure direct communication with upper management and young talents.",
+        "image": "https://media.licdn.com/dms/image/v2/D4D22AQG1SELcCu7VNA/feedshare-shrink_480/feedshare-shrink_480/0/1728564403146?e=1780531200&v=beta&t=LP9WfVxNXSIM-HhU4wFlQ4cGlrc-1aQnvL1IR9uCXD8",
+        "linkedin": "https://www.linkedin.com/posts/civilengineering-mec-engineeringcareers-ugcPost-7250125082356764673-zN1a/?utm_source=share&utm_medium=member_desktop&rcm=ACoAACurbIAB",
+        "date": "2024-10-10"
       },
       {
-        "slug": "lifer-medical-park-launch",
-        "title": "Lifer Medical Park Project Launch",
-        "excerpt": "The official launch of the Lifer Medical Park project marks a new milestone in healthcare infrastructure.",
-        "date": "2024-02-20"
+        "slug": "iso-9001-certification",
+        "title": "MEC Achieves ISO 9001 Certification!",
+        "excerpt": "This significant milestone underscores our unwavering commitment to quality, customer satisfaction, and continuous improvement.",
+        "content": "We are delighted to announce that our engineering consultant office, Middle East Engineering Consultants (MEC), has achieved ISO 9001 certification! ✔\n\nThis significant milestone underscores our unwavering commitment to quality, customer satisfaction, and continuous improvement. ISO 9001 certification demonstrates our adherence to rigorous quality management standards, ensuring that our clients receive services of the highest caliber. 💯\n\nWe extend our sincere appreciation to our dedicated team and valued clients for their support and collaboration in this journey towards excellence.",
+        "image": "https://media.licdn.com/dms/image/v2/D4D22AQEAc5IYlsnCUg/feedshare-shrink_480/feedshare-shrink_480/0/1717237294533?e=1780531200&v=beta&t=oMtna6zsz4mfsu305ktnPTxpZgalRe71nVtdx80JYLs",
+        "linkedin": "https://www.linkedin.com/posts/iso9001-qualitymanagement-engineeringconsultancy-share-7202615255514902528-Im4x/?utm_source=share&utm_medium=member_desktop&rcm=ACo",
+        "date": "2024-06-01"
       },
       {
-        "slug": "iso-certification",
-        "title": "MEC Receives ISO 9001 Certification",
-        "excerpt": "MEC has achieved ISO 9001 certification in Quality Management, reaffirming our commitment to excellence.",
-        "date": "2024-01-10"
+        "slug": "assiut-employment-forum",
+        "title": "First Engineering Employment Forum at Assiut University",
+        "excerpt": "We are proud to continue our journey of success with our participation in the forum, supporting engineers across Egypt.",
+        "content": "We are proud to continue our journey of success with our participation in the First Engineering Employment Forum at the Faculty of Engineering – Assiut University, under the patronage of Prof. Dr. Ahmed El-Menshawy, President of the University, and in the presence of esteemed academic and engineering leaders.\n\nMiddle East Engineering Consultants (MEC) had previously participated in a major employment forum in Cairo last year, and this year in Upper Egypt.\n\nAt the forum, we welcomed applications for both job opportunities and internships from talented engineers. A special moment was the recognition of Prof. Dr. Eng. Hesham Diab, who received an award on behalf of our office, in appreciation of our ongoing contribution to the engineering community.\n\nWe sincerely thank Assiut University and the organizers for this outstanding event, and we look forward to supporting more engineers across Egypt.",
+        "image": "https://mecegy.com/media/photos/25/05/08/Beige_Blue_Minimalist_Aesthetic_Photo_Collage_Beach_Desktop_Wallpaper_1.jpg",
+        "linkedin": "https://www.linkedin.com/posts/middleeastengineeringconsultations-engineeringemploymentforum-ugcPost-7322267608186007552-Y_Kw/?utm_source=share&utm_medium=member_de",
+        "date": "2025-05-08"
       },
       {
-        "slug": "manqabad-bridge-project",
-        "title": "Manqabad Overpass Bridge in Assiut",
-        "excerpt": "Progress update on the engineering supervision for the Manqabad overpass bridge in Assiut.",
-        "date": "2023-12-05"
+        "slug": "manqabad-overpass-consultant",
+        "title": "MEC Serves as Consultant for Manqabad Overpass Bridge Project",
+        "excerpt": "Led by Chairman Prof. Hesham M. Diab, MEC is providing consultancy for the landmark bridge project in Assiut.",
+        "content": "We are pleased to announce that Middle East Engineering Consultants (MEC), led by our Chairman, Prof. Hesham M. Diab, is serving as the consultant for the Manqabad Overpass Bridge project in Assiut.\n\nA 1,900 meter-long and 16.70-meter-wide bridge spans the Cairo-Aswan railway lines and the Ibrahimia Canal, aiming to alleviate traffic congestion and enhance regional connectivity.\n\nProf. Diab, a Professor of Concrete Structures at Assiut University, brings extensive expertise in reinforced concrete design to this project.",
+        "image": "https://media.licdn.com/dms/image/v2/D4D22AQG-uWclQaKx-Q/feedshare-shrink_800/B4DZSDF579HcAg-/0/1737366193718?e=1780531200&v=beta&t=IhFWBYiPvm4zMk8SiQVoMPmdnnlStXcGBd8yGfi4rHg",
+        "linkedin": "https://www.linkedin.com/posts/infrastructure-engineering-assiut-ugcPost-7287041980222611456-KNHM/?utm_source=share&utm_medium=member_desktop&rcm=ACoAACurbIAB30I5GE",
+        "date": "2025-01-20"
+      },
+      {
+        "slug": "ceo-excellence-insights",
+        "title": "CEO Eng. Khaled Abdelgaber Shares Insights on Journey to Excellence",
+        "excerpt": "Eng. Khaled Abdelgaber discussed the triumphs and challenges in our prestigious project, Life Medical Park.",
+        "content": "Thrilled to share insights from our recent event where Khaled Abdelgaber, our esteemed CEO at Middle East Engineering Consultants (MEC), discussed the challenges and triumphs in our journey towards excellence in engineering consultancy services.\n\nOne of those challenges to address was time management challenges faced by our office, particularly in our prestigious project, \"Life Medical Park,\" in collaboration with the visionary owner 3i Pharma S.A.E.\n\n🎥 Take a look at Eng. Abdelgaber's talk on our official LinkedIn page.",
+        "image": "https://mecegy.com/media/photos/25/03/20/129274101_107096397930965_7019071279980540081_n.jpg",
+        "linkedin": "https://www.linkedin.com/posts/middle-east-engineering-consultants_engineeringexcellence-timemanagement-lifemedicalpark-activity-7179922838596829185-eImO?utm_source=share&utm_medium=member_desktop&rcm",
+        "date": "2024-03-20"
       }
     ]
   },
