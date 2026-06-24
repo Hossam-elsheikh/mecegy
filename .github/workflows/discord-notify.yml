@@ -7,7 +7,6 @@ jobs:
 notify:
 runs-on: ubuntu-latest
 
-```
 steps:
   - name: Notify Discord
     run: |
@@ -20,4 +19,3 @@ steps:
       EOF
       )" \
       "${{ secrets.DISCORD_WEBHOOK }}"
-```
