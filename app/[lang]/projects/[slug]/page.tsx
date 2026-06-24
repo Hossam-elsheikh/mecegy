@@ -1,6 +1,6 @@
 export const dynamic = 'force-dynamic';
 
-import { getDictionary, hasLocale, locales } from "../../dictionaries";
+import { getDictionary, hasLocale } from "../../dictionaries";
 import { notFound } from "next/navigation";
 import type { Metadata } from "next";
 import Image from "next/image";
@@ -17,13 +17,6 @@ const categoryIcons: Record<string, LucideIcon> = {
   residential: Home,
   infrastructure: Construction,
 };
-
-export async function generateStaticParams() {
-  const supabase = createAdminClient();
-  const { data: rows } = await supabase.from("projects").select("slug").eq("published", true);
-  const slugs = rows?.map((r) => r.slug) ?? [];
-  return locales.flatMap((lang) => slugs.map((slug) => ({ lang, slug })));
-}
 
 export async function generateMetadata({
   params,
