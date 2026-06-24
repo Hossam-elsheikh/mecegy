@@ -46,6 +46,37 @@ export default async function HomePage({
     { ...dict.services.constructionManagement, Icon: HardHat, num: "03", image: "https://images.unsplash.com/photo-1541888946425-d81bb19240f5?w=800&q=80" },
   ];
 
+  const processSteps = [
+    {
+      num: "01",
+      en: "Consultation",
+      ar: "الاستشارة",
+      descEn: "Deep discovery sessions to understand your vision, site constraints, and project goals.",
+      descAr: "جلسات استكشافية معمّقة لفهم رؤيتك وقيود الموقع وأهداف المشروع.",
+    },
+    {
+      num: "02",
+      en: "Design & Planning",
+      ar: "التصميم والتخطيط",
+      descEn: "Detailed architectural and structural designs with full feasibility analysis.",
+      descAr: "تصاميم معمارية وإنشائية مفصّلة مع تحليل جدوى شامل.",
+    },
+    {
+      num: "03",
+      en: "Engineering & Build",
+      ar: "الهندسة والتنفيذ",
+      descEn: "Precise on-site execution with rigorous quality control and contractor coordination.",
+      descAr: "تنفيذ دقيق في الموقع مع ضبط جودة صارم وتنسيق مع المقاولين.",
+    },
+    {
+      num: "04",
+      en: "Handover",
+      ar: "التسليم",
+      descEn: "Final inspections and a seamless handover that exceeds your expectations.",
+      descAr: "فحص نهائي دقيق وتسليم سلس يتجاوز توقعاتك.",
+    },
+  ];
+
   return (
     <>
       {/* ═══════ HERO ═══════ */}
@@ -61,15 +92,74 @@ export default async function HomePage({
         ]}
       />
 
+      {/* ═══════ ABOUT / WHY MEC ═══════ */}
+      <section className="about-split">
+        <div className="about-split-inner">
+          {/* Left — copy */}
+          <div className="scroll-animate-left">
+            <div style={{ display: "flex", alignItems: "center", gap: "1rem", marginBottom: "1.5rem" }}>
+              <span className="section-label">{isAr ? "من نحن" : "About MEC"}</span>
+              <div style={{ height: "1px", width: "60px", background: "linear-gradient(to right, rgba(233,80,28,0.4), transparent)" }} />
+            </div>
+            <h2 className="about-heading">
+              {isAr ? (
+                <><span>هندسة استثنائية</span><br />منذ عام ٢٠٠٨</>
+              ) : (
+                <>Engineering <span>Excellence</span><br />Since 2008</>
+              )}
+            </h2>
+            <p className="about-body">
+              {isAr
+                ? "نحن مجموعة المشاورين للشرق الأوسط، شركة هندسية متكاملة الخدمات تتخصص في الهندسة المعمارية وإدارة المشاريع والإشراف على البناء. نحوّل رؤى عملائنا إلى واقع ملموس بأعلى معايير الجودة والاحترافية."
+                : "Middle East Consultants is a full-service engineering firm specializing in architecture, project management, and construction supervision. We transform client visions into tangible realities with the highest standards of quality and professionalism."}
+            </p>
+            <div className="about-stats-row stagger-children">
+              {[
+                { num: `${dict.stats.yearsCount}+`, label: dict.stats.years },
+                { num: `${dict.stats.projectsCount}+`, label: dict.stats.projects },
+                { num: `${dict.stats.clientsCount}+`, label: dict.stats.clients },
+                { num: `${dict.stats.engineersCount}+`, label: dict.stats.engineers },
+              ].map((s, i) => (
+                <div className="about-stat-pill" key={i}>
+                  <span className="about-stat-num">{s.num}</span>
+                  <span className="about-stat-label">{s.label}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* Right — image */}
+          <div className="about-img-frame scroll-animate-right">
+            <div className="about-img-accent" />
+            <div className="about-img-wrap">
+              <Image
+                src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=800&q=80"
+                alt={isAr ? "فريق المهندسين" : "Engineering team at work"}
+                fill
+                sizes="(max-width: 768px) 100vw, 50vw"
+                style={{ objectFit: "cover" }}
+              />
+            </div>
+            <div className="about-img-badge">
+              <span className="about-img-badge-num">{dict.stats.yearsCount}+</span>
+              <span className="about-img-badge-label">{isAr ? "سنة\nخبرة" : "Years\nof Trust"}</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* ═══════ SERVICES — Asymmetric Mosaic ═══════ */}
       <section
         id="services"
         style={{
-          padding: "6rem 1.5rem",
+          padding: "7rem 1.5rem",
           background: "#ffffff",
+          position: "relative",
+          overflow: "hidden",
         }}
       >
-        <div style={{ maxWidth: "1280px", margin: "0 auto" }}>
+        <span className="section-watermark">{isAr ? "خدماتنا" : "SERVICES"}</span>
+        <div style={{ maxWidth: "1280px", margin: "0 auto", position: "relative", zIndex: 1 }}>
           <div
             className="scroll-animate"
             style={{
@@ -137,16 +227,47 @@ export default async function HomePage({
         </div>
       </section>
 
-      {/* ═══════ PROJECTS — Horizontal Scroll ═══════ */}
+      {/* ═══════ PROCESS — How We Work ═══════ */}
+      <section className="process-section">
+        <div className="process-inner">
+          <div className="process-header scroll-animate">
+            <span className="section-label">{isAr ? "كيف نعمل" : "Our Approach"}</span>
+            <h2
+              style={{
+                fontSize: "clamp(2rem, 4vw, 2.8rem)",
+                fontWeight: 800,
+                color: "#163029",
+                lineHeight: 1.1,
+                marginTop: "0.5rem",
+                letterSpacing: "-0.02em",
+              }}
+            >
+              {isAr ? "من الفكرة إلى التسليم" : "From Concept to Completion"}
+            </h2>
+          </div>
+          <div className="process-steps stagger-children">
+            {processSteps.map((step, i) => (
+              <div className="process-step" key={i}>
+                <div className="process-num-wrap">{step.num}</div>
+                <h3 className="process-step-title">{isAr ? step.ar : step.en}</h3>
+                <p className="process-step-desc">{isAr ? step.descAr : step.descEn}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ═══════ PROJECTS — Magazine Layout ═══════ */}
       <section
         id="projects"
         style={{
-          padding: "8rem 0",
+          padding: "8rem 0 6rem",
           background: "#0e1f1a",
           position: "relative",
           overflow: "hidden",
         }}
       >
+        {/* Section header */}
         <div
           style={{
             maxWidth: "1280px",
@@ -185,38 +306,92 @@ export default async function HomePage({
           </Link>
         </div>
 
-        <div className="projects-staggered" style={{ maxWidth: "1280px", margin: "0 auto", padding: "0 1.5rem" }}>
-          {featuredProjects.map((project, i) => (
+        {/* Magazine grid */}
+        <div style={{ maxWidth: "1280px", margin: "0 auto", padding: "0 1.5rem" }}>
+          <div className="projects-magazine">
+            {/* Large featured card */}
+            {featuredProjects[0] && (
+              <Link
+                href={`/${lang}/projects/${featuredProjects[0].slug}`}
+                className="projects-mag-main"
+              >
+                <Image
+                  src={featuredProjects[0].image || fallbackImage}
+                  alt={featuredProjects[0].title || ""}
+                  fill
+                  sizes="(max-width: 768px) 100vw, 60vw"
+                  style={{ objectFit: "cover" }}
+                />
+                <div className="project-card-overlay" />
+                <div className="projects-mag-content">
+                  <span className="project-card-cat">
+                    {dict.projects.categories[featuredProjects[0].category as keyof typeof dict.projects.categories]}
+                  </span>
+                  <h3 className="projects-mag-title">{featuredProjects[0].title}</h3>
+                  <p className="projects-mag-desc">{featuredProjects[0].description}</p>
+                </div>
+              </Link>
+            )}
+            {/* Two stacked side cards */}
+            <div className="projects-mag-side">
+              {featuredProjects.slice(1, 3).map((project, i) => (
+                <Link
+                  key={i}
+                  href={`/${lang}/projects/${project.slug}`}
+                  className="projects-mag-small"
+                >
+                  <Image
+                    src={project.image || fallbackImage}
+                    alt={project.title || ""}
+                    fill
+                    sizes="(max-width: 768px) 100vw, 40vw"
+                    style={{ objectFit: "cover" }}
+                  />
+                  <div className="project-card-overlay" />
+                  <div className="projects-mag-content">
+                    <span className="project-card-cat">
+                      {dict.projects.categories[project.category as keyof typeof dict.projects.categories]}
+                    </span>
+                    <h3 className="projects-mag-side-title">{project.title}</h3>
+                  </div>
+                </Link>
+              ))}
+            </div>
+          </div>
+
+          {/* Banner card (4th project) */}
+          {featuredProjects[3] && (
             <Link
-              key={i}
-              href={`/${lang}/projects/${project.slug}`}
-              className="project-card"
+              href={`/${lang}/projects/${featuredProjects[3].slug}`}
+              className="projects-mag-banner"
             >
               <Image
-                src={project.image || fallbackImage}
-                alt={project.title || ""}
+                src={featuredProjects[3].image || fallbackImage}
+                alt={featuredProjects[3].title || ""}
                 fill
-                sizes="(max-width: 768px) 100vw, 50vw"
+                sizes="100vw"
                 style={{ objectFit: "cover" }}
               />
               <div className="project-card-overlay" />
-              <div className="project-card-content">
-                <span className="project-card-cat">
-                  {dict.projects.categories[project.category as keyof typeof dict.projects.categories]}
-                </span>
-                <h3 className="project-card-title">{project.title}</h3>
-                <p className="project-card-desc">{project.description}</p>
+              <div className="projects-mag-content projects-mag-content-row">
+                <div>
+                  <span className="project-card-cat">
+                    {dict.projects.categories[featuredProjects[3].category as keyof typeof dict.projects.categories]}
+                  </span>
+                  <h3 className="projects-mag-side-title" style={{ marginTop: "0.4rem" }}>{featuredProjects[3].title}</h3>
+                </div>
+                <p className="projects-mag-banner-desc">{featuredProjects[3].description}</p>
               </div>
             </Link>
-          ))}
+          )}
         </div>
       </section>
 
       {/* ═══════ TESTIMONIALS — Spotlight ═══════ */}
       <TestimonialSpotlight testimonials={dict.testimonials} lang={lang} />
 
-      {/* ═══════ NEWS — Editorial Rows ═══════ */}
-      <section id="news" style={{ padding: "8rem 1.5rem", position: "relative" }}>
+      {/* ═══════ NEWS — Card Grid ═══════ */}
+      <section id="news" style={{ padding: "8rem 1.5rem", background: "#fff", position: "relative" }}>
         <div style={{ maxWidth: "1280px", margin: "0 auto" }}>
           <div
             className="scroll-animate"
@@ -226,7 +401,7 @@ export default async function HomePage({
               justifyContent: "space-between",
               flexWrap: "wrap",
               gap: "1rem",
-              marginBottom: "3rem",
+              marginBottom: "3.5rem",
             }}
           >
             <div>
@@ -254,28 +429,30 @@ export default async function HomePage({
             </Link>
           </div>
 
-          <div className="scroll-animate news-editorial">
+          <div className="news-cards-grid stagger-children">
             {latestNews.map((article, i) => (
               <Link
                 key={i}
                 href={`/${lang}/news/${article.slug}`}
-                className="news-row"
+                className="news-img-card"
               >
-                <span className="news-row-date">{article.date}</span>
-                <div className="news-row-img-wrap">
+                <div className="news-img-card-img">
                   <Image
                     src={article.image || fallbackImage}
                     alt={article.title || ""}
                     fill
-                    sizes="80px"
+                    sizes="(max-width: 768px) 100vw, 50vw"
                     style={{ objectFit: "cover" }}
                   />
                 </div>
-                <div>
-                  <h3 className="news-row-title">{article.title}</h3>
-                  <p className="news-row-excerpt">{article.excerpt}</p>
+                <div className="news-img-card-body">
+                  <span className="news-img-card-date">{article.date}</span>
+                  <h3 className="news-img-card-title">{article.title}</h3>
+                  <p className="news-img-card-excerpt">{article.excerpt}</p>
+                  <span className="news-img-card-arrow">
+                    {isRTL ? "← اقرأ المزيد" : "Read more →"}
+                  </span>
                 </div>
-                <span className="news-row-arrow">{isRTL ? "←" : "→"}</span>
               </Link>
             ))}
           </div>
@@ -284,6 +461,7 @@ export default async function HomePage({
 
       {/* ═══════ CTA — Diagonal ═══════ */}
       <section className="cta-diagonal">
+        <div className="cta-dot-pattern" />
         <div className="cta-diagonal-inner scroll-animate">
           <span
             className="section-label"
