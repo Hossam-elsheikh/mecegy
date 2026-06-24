@@ -1,3 +1,5 @@
+export const dynamic = 'force-dynamic';
+
 import { getDictionary, hasLocale } from "../dictionaries";
 import { notFound } from "next/navigation";
 import { ProjectsClient } from "@/components/ProjectsClient";

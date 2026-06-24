@@ -1,3 +1,5 @@
+export const dynamic = 'force-dynamic';
+
 import { getDictionary, hasLocale, locales } from "../../dictionaries";
 import { notFound } from "next/navigation";
 import type { Metadata } from "next";

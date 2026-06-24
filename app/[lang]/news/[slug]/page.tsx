@@ -1,3 +1,5 @@
+export const dynamic = 'force-dynamic';
+
 import { getDictionary, hasLocale, locales } from "../../dictionaries";
 import { notFound } from "next/navigation";
 import Image from "next/image";
