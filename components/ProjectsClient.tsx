@@ -4,21 +4,31 @@ import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 
+export interface ProjectCard {
+  slug: string;
+  title: string;
+  category: string;
+  image: string | null;
+  description: string | null;
+}
+
 interface ProjectsClientProps {
-  dict: Record<string, any>;
+  projects: ProjectCard[];
+  categories: Record<string, string>;
+  ui: { viewProject: string };
   lang: string;
 }
 
 const fallbackImage = "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=800&q=80";
 
-export function ProjectsClient({ dict, lang }: ProjectsClientProps) {
+export function ProjectsClient({ projects, categories, ui, lang }: ProjectsClientProps) {
   const [activeCategory, setActiveCategory] = useState("all");
-  const categories = Object.keys(dict.projects.categories);
+  const categoryKeys = Object.keys(categories);
 
   const filteredProjects =
     activeCategory === "all"
-      ? dict.projects.items
-      : dict.projects.items.filter((p: any) => p.category === activeCategory);
+      ? projects
+      : projects.filter((p) => p.category === activeCategory);
 
   return (
     <>
@@ -32,13 +42,13 @@ export function ProjectsClient({ dict, lang }: ProjectsClientProps) {
           marginBottom: "3rem",
         }}
       >
-        {categories.map((cat) => (
+        {categoryKeys.map((cat) => (
           <button
             key={cat}
             className={`category-btn ${activeCategory === cat ? "active" : ""}`}
             onClick={() => setActiveCategory(cat)}
           >
-            {dict.projects.categories[cat]}
+            {categories[cat]}
           </button>
         ))}
       </div>
@@ -51,7 +61,7 @@ export function ProjectsClient({ dict, lang }: ProjectsClientProps) {
           gap: "1.5rem",
         }}
       >
-        {filteredProjects.map((project: any, i: number) => (
+        {filteredProjects.map((project, i) => (
           <Link
             key={`${project.slug}-${i}`}
             href={`/${lang}/projects/${project.slug}`}
@@ -97,7 +107,7 @@ export function ProjectsClient({ dict, lang }: ProjectsClientProps) {
                     marginBottom: "0.5rem",
                   }}
                 >
-                  {dict.projects.categories[project.category]}
+                  {categories[project.category]}
                 </span>
                 <h3 style={{ color: "#fff", fontSize: "1.2rem", fontWeight: 700, marginBottom: "0.25rem" }}>
                   {project.title}
@@ -114,7 +124,7 @@ export function ProjectsClient({ dict, lang }: ProjectsClientProps) {
                     fontSize: "0.85rem",
                   }}
                 >
-                  {dict.projects.viewProject} →
+                  {ui.viewProject} →
                 </span>
               </div>
             </div>

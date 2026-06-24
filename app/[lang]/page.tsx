@@ -6,6 +6,7 @@ import Link from "next/link";
 import { Landmark, ClipboardList, HardHat } from "lucide-react";
 import MarqueeStrip from "@/components/MarqueeStrip";
 import TestimonialSpotlight from "@/components/TestimonialSpotlight";
+import { createAdminClient } from "@/lib/supabase/admin";
 
 const fallbackImage = "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=800&q=80";
 
@@ -16,8 +17,28 @@ export default async function HomePage({
 }) {
   const { lang } = await params;
   if (!hasLocale(lang)) notFound();
-  const dict = await getDictionary(lang);
+
+  const supabase = createAdminClient();
+  const [dict, { data: projectRows }, { data: newsRows }] = await Promise.all([
+    getDictionary(lang),
+    supabase.from("projects").select("slug, category, image_url, title_en, title_ar, description_en, description_ar").eq("published", true).order("created_at", { ascending: false }).limit(4),
+    supabase.from("news").select("slug, date, image_url, title_en, title_ar, excerpt_en, excerpt_ar").eq("published", true).order("date", { ascending: false }).limit(4),
+  ]);
+
   const isRTL = lang === "ar";
+  const isAr = isRTL;
+
+  const featuredProjects = (projectRows ?? []).map((p) => ({
+    slug: p.slug, category: p.category, image: p.image_url,
+    title: isAr ? p.title_ar : p.title_en,
+    description: isAr ? p.description_ar : p.description_en,
+  }));
+
+  const latestNews = (newsRows ?? []).map((n) => ({
+    slug: n.slug, date: n.date, image: n.image_url,
+    title: isAr ? n.title_ar : n.title_en,
+    excerpt: isAr ? n.excerpt_ar : n.excerpt_en,
+  }));
 
   const services = [
     { ...dict.services.architecture, Icon: Landmark, num: "01", image: "https://images.unsplash.com/photo-1487958449943-2429e8be8625?w=800&q=80" },
@@ -165,7 +186,7 @@ export default async function HomePage({
         </div>
 
         <div className="projects-staggered" style={{ maxWidth: "1280px", margin: "0 auto", padding: "0 1.5rem" }}>
-          {dict.projects.items.slice(0, 4).map((project: any, i: number) => (
+          {featuredProjects.map((project, i) => (
             <Link
               key={i}
               href={`/${lang}/projects/${project.slug}`}
@@ -173,7 +194,7 @@ export default async function HomePage({
             >
               <Image
                 src={project.image || fallbackImage}
-                alt={project.title}
+                alt={project.title || ""}
                 fill
                 sizes="(max-width: 768px) 100vw, 50vw"
                 style={{ objectFit: "cover" }}
@@ -234,7 +255,7 @@ export default async function HomePage({
           </div>
 
           <div className="scroll-animate news-editorial">
-            {dict.news.items.slice(0, 4).map((article: any, i: number) => (
+            {latestNews.map((article, i) => (
               <Link
                 key={i}
                 href={`/${lang}/news/${article.slug}`}
@@ -243,8 +264,8 @@ export default async function HomePage({
                 <span className="news-row-date">{article.date}</span>
                 <div className="news-row-img-wrap">
                   <Image
-                    src={article.image}
-                    alt={article.title}
+                    src={article.image || fallbackImage}
+                    alt={article.title || ""}
                     fill
                     sizes="80px"
                     style={{ objectFit: "cover" }}

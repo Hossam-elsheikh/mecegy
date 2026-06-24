@@ -4,6 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import type { Metadata } from "next";
 import PageHero from "@/components/PageHero";
+import { createAdminClient } from "@/lib/supabase/admin";
 
 // Inline LinkedIn Icon to bypass brand icon limits in lucide-react
 const LinkedinIcon = ({ size = 14 }: { size?: number }) => (
@@ -26,13 +27,29 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
 export default async function NewsPage({ params }: { params: Promise<{ lang: string }> }) {
   const { lang } = await params;
   if (!hasLocale(lang)) notFound();
-  const dict = await getDictionary(lang);
-  const newsItems = dict.news.items; 
+
+  const [dict, supabase] = [await getDictionary(lang), createAdminClient()];
+
+  const { data: rows } = await supabase
+    .from("news")
+    .select("slug, date, image_url, linkedin_url, title_en, title_ar, excerpt_en, excerpt_ar")
+    .eq("published", true)
+    .order("date", { ascending: false });
+
+  const isAr = lang === "ar";
+  const newsItems = (rows ?? []).map((n) => ({
+    slug:     n.slug,
+    date:     n.date,
+    image:    n.image_url,
+    linkedin: n.linkedin_url,
+    title:    isAr ? n.title_ar   : n.title_en,
+    excerpt:  isAr ? n.excerpt_ar : n.excerpt_en,
+  }));
 
   return (
     <>
       <PageHero
-        label={lang === "ar" ? "آخر الأخبار" : "Latest Updates"}
+        label={isAr ? "آخر الأخبار" : "Latest Updates"}
         title={dict.news.title}
         subtitle={dict.news.subtitle}
       />
@@ -40,25 +57,25 @@ export default async function NewsPage({ params }: { params: Promise<{ lang: str
       <section style={{ padding: "4rem 1.5rem" }}>
         <div style={{ maxWidth: "1280px", margin: "0 auto" }}>
           <div className="stagger-children" style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(280px, 1fr))", gap: "2rem" }}>
-            {newsItems.map((article: any, i: number) => (
+            {newsItems.map((article, i) => (
               <article key={i} className="news-card" style={{ display: "flex", flexDirection: "column", height: "100%" }}>
                 <div className="news-card-image" style={{ position: "relative", height: "200px", width: "100%" }}>
-                  <Image 
-                    src={article.image || "https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=800&q=80"} 
-                    alt={article.title} 
-                    fill 
-                    sizes="(max-width: 768px) 100vw, 33vw" 
-                    style={{ objectFit: "cover" }} 
+                  <Image
+                    src={article.image || "https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=800&q=80"}
+                    alt={article.title}
+                    fill
+                    sizes="(max-width: 768px) 100vw, 33vw"
+                    style={{ objectFit: "cover" }}
                   />
-                  <div style={{ position: "absolute", top: "1rem", left: lang === "ar" ? "auto" : "1rem", right: lang === "ar" ? "1rem" : "auto", background: "rgba(233,80,28,0.9)", color: "#fff", padding: "0.25rem 0.75rem", borderRadius: "50px", fontSize: "0.75rem", fontWeight: 600 }}>{article.date}</div>
+                  <div style={{ position: "absolute", top: "1rem", left: isAr ? "auto" : "1rem", right: isAr ? "1rem" : "auto", background: "rgba(233,80,28,0.9)", color: "#fff", padding: "0.25rem 0.75rem", borderRadius: "50px", fontSize: "0.75rem", fontWeight: 600 }}>{article.date}</div>
                 </div>
                 <div style={{ padding: "1.5rem", display: "flex", flexDirection: "column", flexGrow: 1 }}>
                   <h3 style={{ fontSize: "1.05rem", fontWeight: 700, color: "#163029", marginBottom: "0.5rem", lineHeight: 1.4 }}>{article.title}</h3>
                   <p style={{ color: "#6b7280", fontSize: "0.9rem", lineHeight: 1.6, marginTop: "0.5rem", flexGrow: 1 }}>{article.excerpt}</p>
-                  
+
                   <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", marginTop: "1.5rem", borderTop: "1px solid #f3f4f6", paddingTop: "1rem" }}>
                     <Link href={`/${lang}/news/${article.slug}`} className="stretched-link" style={{ color: "#E9501C", fontWeight: 600, fontSize: "0.9rem", textDecoration: "none" }}>
-                      {dict.news.readMore} {lang === "ar" ? "←" : "→"}
+                      {dict.news.readMore} {isAr ? "←" : "→"}
                     </Link>
                     {article.linkedin && (
                       <a
