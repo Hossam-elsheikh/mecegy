@@ -1,0 +1,29 @@
+name: Discord Notifications
+
+on:
+  push:
+    branches:
+      - main
+      - dev
+
+jobs:
+  notify:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Send Discord Notification
+        env:
+          DISCORD_WEBHOOK: ${{ secrets.DISCORD_WEBHOOK }}
+        run: |
+          COMMIT_MSG=$(git log -1 --pretty=%B ${{ github.sha }})
+          AUTHOR="${{ github.actor }}"
+          REPO="${{ github.repository }}"
+          BRANCH="${{ github.ref_name }}"
+          COMMIT_URL="${{ github.server_url }}/${{ github.repository }}/commit/${{ github.sha }}"
+
+          curl -H "Content-Type: application/json" \
+          -X POST \
+          -d "{
+            \"content\": \"🚀 New commit pushed\n**Repo:** $REPO\n**Branch:** $BRANCH\n**Author:** $AUTHOR\n**Message:** $COMMIT_MSG\n$COMMIT_URL\"
+          }" \
+          "$DISCORD_WEBHOOK"
