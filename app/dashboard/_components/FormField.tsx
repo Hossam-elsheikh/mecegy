@@ -1,3 +1,52 @@
+'use client'
+
+export function SlugField({
+  defaultValue = '',
+  required = false,
+}: {
+  defaultValue?: string
+  required?: boolean
+}) {
+  function sanitize(val: string) {
+    return val.toLowerCase().replace(/\s+/g, '-')
+  }
+
+  return (
+    <div style={{ display: 'flex', flexDirection: 'column', gap: '0.375rem' }}>
+      <label htmlFor="slug" style={{ fontSize: '0.8rem', fontWeight: 600, color: '#374151' }}>
+        Slug{required && <span style={{ color: '#E9501C' }}> *</span>}
+      </label>
+      <input
+        id="slug"
+        name="slug"
+        type="text"
+        defaultValue={sanitize(defaultValue)}
+        required={required}
+        onChange={(e) => {
+          const sanitized = sanitize(e.target.value)
+          if (e.target.value !== sanitized) {
+            const pos = e.target.selectionStart ?? sanitized.length
+            e.target.value = sanitized
+            e.target.setSelectionRange(pos, pos)
+          }
+        }}
+        style={{
+          width: '100%',
+          border: '1px solid #d1d5db',
+          borderRadius: '8px',
+          padding: '0.5rem 0.75rem',
+          fontSize: '0.875rem',
+          background: '#fff',
+          outline: 'none',
+          boxSizing: 'border-box',
+          fontFamily: 'monospace',
+        }}
+      />
+      <span style={{ fontSize: '0.72rem', color: '#9ca3af' }}>Lowercase letters, numbers, and hyphens only. Spaces become hyphens.</span>
+    </div>
+  )
+}
+
 export function FormField({
   label,
   name,

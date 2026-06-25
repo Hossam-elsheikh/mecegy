@@ -2,7 +2,7 @@
 
 import { useActionState } from 'react'
 import { updateNews } from '@/app/dashboard/_actions/news'
-import { FormField, TextareaField, SectionDivider, FieldRow } from '@/app/dashboard/_components/FormField'
+import { FormField, TextareaField, SectionDivider, FieldRow, SlugField } from '@/app/dashboard/_components/FormField'
 import { ImageUploadField } from '@/app/dashboard/_components/ImageUploadField'
 import Link from 'next/link'
 
@@ -37,7 +37,7 @@ export function EditNewsForm({ article }: { article: Article }) {
       <div style={{ background: '#fff', borderRadius: '12px', border: '1px solid #e5e7eb', padding: '1.5rem', display: 'flex', flexDirection: 'column', gap: '1rem' }}>
 
         <FieldRow>
-          <FormField label="Slug" name="slug" required defaultValue={article.slug} />
+          <SlugField required defaultValue={article.slug} />
           <FormField label="Date" name="date" type="date" required defaultValue={article.date} />
         </FieldRow>
 

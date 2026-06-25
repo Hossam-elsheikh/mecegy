@@ -10,7 +10,7 @@ function parseFeatures(raw: string): string[] {
 
 function extractFields(formData: FormData) {
   return {
-    slug:                 (formData.get('slug') as string).trim(),
+    slug:                 (formData.get('slug') as string).trim().toLowerCase().replace(/\s+/g, '-'),
     category:             formData.get('category') as string,
     location:             (formData.get('location') as string).trim(),
     image_url:            (formData.get('image_url') as string).trim(),

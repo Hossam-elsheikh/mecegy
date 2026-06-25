@@ -6,7 +6,7 @@ import { createAdminClient } from '@/lib/supabase/admin'
 
 function extractFields(formData: FormData) {
   return {
-    slug:         (formData.get('slug') as string).trim(),
+    slug:         (formData.get('slug') as string).trim().toLowerCase().replace(/\s+/g, '-'),
     date:         formData.get('date') as string,
     image_url:    (formData.get('image_url') as string).trim(),
     linkedin_url: (formData.get('linkedin_url') as string).trim(),

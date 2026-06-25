@@ -2,7 +2,7 @@
 
 import { useActionState } from 'react'
 import { createNews } from '@/app/dashboard/_actions/news'
-import { FormField, TextareaField, SectionDivider, FieldRow } from '@/app/dashboard/_components/FormField'
+import { FormField, TextareaField, SectionDivider, FieldRow, SlugField } from '@/app/dashboard/_components/FormField'
 import { ImageUploadField } from '@/app/dashboard/_components/ImageUploadField'
 import Link from 'next/link'
 
@@ -26,7 +26,7 @@ export default function NewNewsPage() {
         <div style={{ background: '#fff', borderRadius: '12px', border: '1px solid #e5e7eb', padding: '1.5rem', display: 'flex', flexDirection: 'column', gap: '1rem' }}>
 
           <FieldRow>
-            <FormField label="Slug" name="slug" required />
+            <SlugField required />
             <FormField label="Date" name="date" type="date" required />
           </FieldRow>
 
